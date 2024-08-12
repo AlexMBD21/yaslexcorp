@@ -1,0 +1,151 @@
+
+  
+  .container_solution {
+    width: 100%;
+    text-align: center;
+    margin: 0; /* Elimina el margen superior e inferior */
+    padding: 60px 20px 40px; /* Añade padding para separación, incluyendo espacio en la parte superior */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+    border-bottom: 3px solid #D2AB4D; /* Añade un borde inferior para la separación */
+    background-color:#282723 ; /* Aplica el color de fondo */
+    position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
+    z-index: 0; /* Asegura que el contenedor esté en el nivel correcto */
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #D2AB4D;
+    font-weight: bold;
+    margin-top: 0; /* Asegura que no haya margen superior */
+  }
+  
+  .card_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Define un ancho máximo para el contenedor */
+    margin: auto;
+    padding: 60px 0;
+  }
+  
+  .card_bx {
+    --dark-color: #cfcbc0;
+    --dark-alt-color: #777777;
+    --white-color: #282723;
+    --button-color: #333333;
+    --transition: 0.5s ease-in-out;
+  
+    font-family: inherit;
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark-color);
+    transition: var(--transition);
+    border-radius: 12px; /* Bordes redondeados */
+  }
+  
+  .card_bx:hover {
+    border-radius: 25px; /* Bordes más redondeados al hacer hover */
+  }
+  
+  .card_bx::before,
+  .card_bx::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: var(--transition);
+  }
+  
+  .card_bx:hover::before {
+    inset: -10px 50px;
+    border-top: 4px solid var(--clr);
+    transform: skewY(15deg);
+    border-bottom: 4px solid var(--clr);
+  }
+  
+  .card_bx:hover::before {
+    inset: -10px 40px;
+    transform: skewY(0deg);
+  }
+  
+  .card_bx:hover::after {
+    inset: 40px -10px;
+    transform: skew(0deg);
+  }
+  
+  .card_bx .card_data {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    padding: 0 20px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .card_bx .card_data .card_icon {
+    height: 50px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--text-color);
+    background-color: #D2AB4D;
+    transition: var(--transition);
+  }
+  
+  .card_bx .card_data .card_icon {
+    color: var(--clr);
+    box-shadow: 0 0 0 4px var(--dark-color), 0 0 0 6px var(--clr);
+  }
+  
+  .card_bx:hover .card_data .card_icon {
+    color: var(--dark-color);
+    background-color: var(--clr);
+    box-shadow: 0 0 0 4px var(--dark-color), 0 0 0 400px var(--clr);
+  }
+  
+  .card_bx .card_data .card_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card_bx .card_data h3 summary {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #282723;
+    transition: var(--transition);
+  }
+  
+  summary {
+    padding-bottom: 12px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .card_bx {
+      max-width: 45%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card_bx {
+      max-width: 100%;
+    }
+  }
+  

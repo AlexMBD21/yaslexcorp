@@ -1,0 +1,101 @@
+footer {
+    background-color: #181818 !important;
+    color: #f8f9fa;
+    position: relative;
+    padding-bottom: 2rem; /* Espacio para el copyright */
+  }
+  
+  footer a {
+    color: #D2AB4D !important; /* Color del texto de contacto */
+  }
+  
+  footer a:hover {
+    color: #D2AB4D;
+  }
+  
+  .logo {
+    width: 100px; /* Ajusta el ancho del logo */
+    height: auto; /* Mantiene la proporción del logo */
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem; /* Espacio entre los iconos */
+    margin-top: 3rem; /* Ajusta la posición de los iconos en desktop */
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    color: #D2AB4D !important; /* Color de los iconos */
+    position: relative; /* Necesario para el tooltip */
+  }
+  
+  .social-icons a:hover {
+    color: #D2AB4D; /* Color de los iconos al pasar el ratón */
+  }
+  
+  .social-icons a::after {
+    content: attr(data-tooltip); /* Usa el atributo data-tooltip para el texto */
+    position: absolute;
+    bottom: -2rem; /* Ajusta la posición del tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #D2AB4D;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    font-size: 0.75rem; /* Tamaño del texto del tooltip */
+  }
+  
+  .social-icons a:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contact-info a {
+    color: #D2AB4D !important; /* Color del texto de contacto */
+  }
+  
+  .contact-info a:hover {
+    color: #D2AB4D; /* Color del texto de contacto al pasar el ratón */
+  }
+  
+  footer .copyright {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: #D2AB4D !important; /* Color del texto de copyright */
+  }
+  
+  footer span {
+    color: #D2AB4D !important; /* Color del texto del span */
+  }
+  
+  @media (max-width: 768px) {
+    footer .col-md-4 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  
+    footer .d-flex {
+      justify-content: center;
+    }
+  
+    .social-icons {
+      justify-content: center;
+      margin-top: 0; /* Ajusta la posición de los iconos en móviles */
+    }
+  }
+  

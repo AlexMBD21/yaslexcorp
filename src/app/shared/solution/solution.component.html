@@ -1,0 +1,21 @@
+<section class="container_solution">
+    <h2 class="title">Brindamos acompañamiento jurídico en Protección legal integral y especializada</h2>
+    <section class="card_container">
+      <div class="card_bx" *ngFor="let servicio of servicios" [ngStyle]="{'--clr': servicio.color}">
+        <div class="card_data">
+          <div class="card_icon">
+            <i [class]="servicio.icono" aria-hidden="true"></i>
+          </div>
+          <div class="card_content">
+            <h3>{{ servicio.titulo }}</h3>
+            <p>{{ servicio.descripcion }}</p>
+            <details>
+              <summary>Ver Más</summary>
+              {{ servicio.detalles }}
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  

@@ -1,0 +1,116 @@
+/* Estilo para la barra de navegación */
+:host ::ng-deep .navbar {
+    background-color: #181818 !important;
+    padding: 0 10px; /* Reduce el padding a 10px */
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0; /* Posición en la parte superior */
+    width: 100%; /* Asegura que el header ocupe todo el ancho */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra para darle un efecto de elevación */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Estilo para los enlaces de navegación */
+.nav-link {
+    color: #D2AB4D;
+    position: relative;
+    text-decoration: none;
+    margin-right: 15px; /* Espacio entre enlaces */
+    margin-bottom: 10px; /* Espacio adicional entre enlaces cuando el menú está expandido */
+    width: 100%; /* Asegura que los enlaces ocupen el mismo ancho que el botón */
+    text-align: center; /* Centra el texto de los enlaces */
+    transition: color 0.3s ease; /* Transición para el color */
+}
+
+/* Efecto hover para los enlaces de navegación */
+.nav-link:hover {
+    color: #cfcbc0; /* Cambia el color al hacer hover */
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D2AB4D;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Estilo para el botón de menú en dispositivos móviles */
+.navbar-toggler {
+    border-color: #D2AB4D;
+    margin-right: 15px; /* Añade margen al botón de hamburguesa */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23D2AB4D' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Estilo para la lista de navegación */
+.navbar-nav {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 992px) {
+    .navbar-nav {
+        text-align: right;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-link {
+        margin-bottom: 0; /* Elimina el espacio adicional en pantallas grandes */
+        width: auto; /* Restablece el ancho automático en pantallas grandes */
+        text-align: left; /* Restablece la alineación del texto en pantallas grandes */
+    }
+}
+
+/* Estilo para los elementos de la lista de navegación cuando el menú está expandido */
+.collapse.show .navbar-nav .nav-item {
+    margin-bottom: 10px; /* Espacio adicional entre enlaces cuando el menú está expandido */
+}
+
+/* Estilo para el logo */
+.logo {
+    width: 200px; /* Ajusta el ancho del logo */
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción del logo */
+    margin-left: 15px; /* Añade margen al logo en pantallas pequeñas */
+}
+
+/* Estilo para el botón de contacto */
+.btn-outline-warning {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #D2AB4D;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid #D2AB4D;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%; /* Asegura que el botón esté centrado */
+}
+
+/* Efecto hover para el botón de contacto */
+.btn-outline-warning:hover {
+    color: #212529;
+    background-color: #D2AB4D;
+    border-color: #D2AB4D;
+}

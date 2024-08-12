@@ -1,0 +1,14 @@
+
+<div class="portfolio-section">
+    <h2 class="portfolio-title">Nuestro Portafolio</h2>
+    <div class="projects-container">
+      <div class="project-card" *ngFor="let project of projects">
+        <img [src]="project.image" alt="Project image" class="project-image">
+        <div class="project-details">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

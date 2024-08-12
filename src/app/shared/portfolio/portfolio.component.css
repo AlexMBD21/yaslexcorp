@@ -1,0 +1,64 @@
+
+
+.portfolio-section {
+    width: 100%;
+    text-align: center;
+    margin: 0; /* Elimina el margen superior e inferior */
+    padding: 40px 0; /* Añade padding para separación */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+    border-bottom: 3px solid #D2AB4D; /* Añade un borde inferior para la separación */
+    background-color: #282723 ; /* Aplica el color de fondo */
+  }
+  
+  .portfolio-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #D2AB4D;
+    margin-bottom: 20px;
+  }
+  
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 40px; /* Añade espacio en la parte inferior */
+  }
+  
+  .project-card {
+    width: 300px;
+    background: #ffffff;
+    border: 1px solid #4F5873;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .project-details {
+    padding: 16px;
+  }
+  
+  .project-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .project-description {
+    font-size: 14px;
+    color: #666;
+  }
+  
