@@ -1,29 +1,71 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/home">
-            <img src="/assets/img/logo.png" alt="logo" class="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Quienes somos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Asesoría Jurídica</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Portafolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Nuestro equipo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-warning" href="#">Contacto</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/inicio">
+    <img src="/assets/img/logo.png" alt="logo" class="logo">
+  </a>
+  <span class="spacer"></span>
+  <nav class="desktop-menu">
+    <a mat-button routerLink="/inicio">INICIO</a>
+    <a mat-button routerLink="/nosotros">NOSOTROS</a>
+    <a mat-button [matMenuTriggerFor]="serviciosMenu">SERVICIOS</a>
+    <a mat-button routerLink="/negocios">NEGOCIOS</a>
+    <a mat-button routerLink="/afiliate">AFILIATE</a>
+  </nav>
+  <button mat-icon-button class="menu-button" (click)="menuOpen = !menuOpen">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav [(opened)]="menuOpen" mode="over" class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/inicio">INICIO</a>
+      <a mat-list-item routerLink="/nosotros">NOSOTROS</a>
+      <a mat-list-item [matMenuTriggerFor]="serviciosMenu">SERVICIOS</a>
+      <a mat-list-item routerLink="/negocios">NEGOCIOS</a>
+      <a mat-list-item routerLink="/afiliate">Afíliate</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- Menú de Servicios -->
+<mat-menu #serviciosMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="finanzasMenu">Finanzas</button>
+  <button mat-menu-item [matMenuTriggerFor]="derechoMenu">Derecho</button>
+</mat-menu>
+
+<mat-menu #derechoMenu="matMenu">
+  <button mat-menu-item>
+    <span>Derecho Privado</span>
+    <mat-divider></mat-divider>
+    <span class="subtitle">Nacional-Internacional</span>
+  </button>
+  <button mat-menu-item>
+    <span>Derecho Corporativo</span>
+    <mat-divider></mat-divider>
+    <span class="subtitle">Negocios Nacionales-Transnacionales</span>
+  </button>
+  <button mat-menu-item>
+    <span>Sociedades y Alianzas</span>
+    <mat-divider></mat-divider>
+    <span class="subtitle">Contrato y Convenios</span>
+  </button>
+</mat-menu>
+
+<mat-menu #finanzasMenu="matMenu">
+  <button mat-menu-item>
+    <span>Negocios Innovadores</span>
+  </button>
+  <button mat-menu-item>
+    <span>Relaciones Financieras</span>
+    <mat-divider></mat-divider>
+    <span class="subtitle">Inversiones</span>
+  </button>
+  <button mat-menu-item>
+    <span>Negocios Inmobiliarios</span>
+    <mat-divider></mat-divider>
+    <span class="subtitle">Bienes Muebles</span>
+  </button>
+</mat-menu>

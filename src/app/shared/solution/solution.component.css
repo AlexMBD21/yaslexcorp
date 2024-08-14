@@ -6,7 +6,7 @@
     margin: 0; /* Elimina el margen superior e inferior */
     padding: 60px 20px 40px; /* Añade padding para separación, incluyendo espacio en la parte superior */
     box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
-    border-bottom: 3px solid #D2AB4D; /* Añade un borde inferior para la separación */
+    border-bottom: 3px ;
     background-color:#282723 ; /* Aplica el color de fondo */
     position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
     z-index: 0; /* Asegura que el contenedor esté en el nivel correcto */

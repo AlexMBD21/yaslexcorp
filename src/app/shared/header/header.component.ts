@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
-
+import { Component, AfterViewInit } from '@angular/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'] , 
+  imports: [MatSidenavModule, MatToolbarModule, MatListModule, MatIconModule, MatButtonModule, MatMenuModule, RouterModule, NgIf]
 })
-export class HeaderComponent {
+export class HeaderComponent  {
+  menuOpen = false;
 
 }
