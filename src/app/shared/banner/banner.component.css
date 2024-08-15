@@ -1,0 +1,138 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  overflow-x: hidden; /* Asegura que no haya desplazamiento horizontal */
+  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+  background-image: url('/path/to/background-image.png'); /* Fondo con imagen */
+  background-size: cover;
+  background-position: center;
+}
+
+.text-left {
+  max-width: 60%;
+  transform: translateX(-100%);
+  transition: opacity 1s, transform 1s; /* Transiciones para la animación */
+  opacity: 0; /* Oculta inicialmente */
+}
+
+.text-left.animate {
+  transform: translateX(0);
+  opacity: 1; /* Muestra al animar */
+}
+
+.text-left h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 0.5em;
+}
+
+.text-left p {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+.highlight {
+  color: #27ae60; /* Color destacado */
+  font-weight: bold;
+}
+
+.text-right {
+  display: flex;
+  align-items: center;
+  transform: translateX(100%);
+  transition: opacity 1s, transform 1s; /* Transiciones para la animación */
+  opacity: 0; /* Oculta inicialmente */
+}
+
+.text-right.animate {
+  transform: translateX(0);
+  opacity: 1; /* Muestra al animar */
+}
+
+.years {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.number {
+  font-size: 3em;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.text {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .text-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .text-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-left h1, .text-left p {
+    text-align: left;
+  }
+
+  .text-right {
+    align-items: center;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

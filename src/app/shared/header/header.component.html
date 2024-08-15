@@ -5,7 +5,7 @@
   <span class="spacer"></span>
   <nav class="desktop-menu">
     <a mat-button routerLink="/inicio">INICIO</a>
-    <a mat-button routerLink="/nosotros">NOSOTROS</a>
+    <a mat-button [matMenuTriggerFor]="NosotrosMenu">NOSOTROS</a>
     <a mat-button [matMenuTriggerFor]="serviciosMenu">SERVICIOS</a>
     <a mat-button routerLink="/negocios">NEGOCIOS</a>
     <a mat-button routerLink="/afiliate">AFILIATE</a>
@@ -15,11 +15,18 @@
   </button>
 </mat-toolbar>
 
+<mat-menu #NosotrosMenu="matMenu">
+  <button mat-menu-item routerLink="/quienes-somos">Quienes Somos</button>
+  <button mat-menu-item routerLink="/nuestros-clientes">Nuestros Clientes</button>
+</mat-menu>
+
+
+
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav [(opened)]="menuOpen" mode="over" class="sidenav">
     <mat-nav-list>
       <a mat-list-item routerLink="/inicio">INICIO</a>
-      <a mat-list-item routerLink="/nosotros">NOSOTROS</a>
+      <a mat-list-item [matMenuTriggerFor]="NosotrosMenu">NOSOTROS</a>
       <a mat-list-item [matMenuTriggerFor]="serviciosMenu">SERVICIOS</a>
       <a mat-list-item routerLink="/negocios">NEGOCIOS</a>
       <a mat-list-item routerLink="/afiliate">Afíliate</a>
@@ -30,6 +37,13 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
+
+
+
+<mat-menu #NosotrosMenu="matMenu">
+  <button mat-menu-item routerLink="/quienes-somos">Quienes Somos</button>
+  <button mat-menu-item routerLink="/nuestros-clientes">Nuestros Clientes</button>
+</mat-menu>
 <!-- Menú de Servicios -->
 <mat-menu #serviciosMenu="matMenu">
   <button mat-menu-item [matMenuTriggerFor]="finanzasMenu">Finanzas</button>
